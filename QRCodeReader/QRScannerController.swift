@@ -12,7 +12,7 @@ import AVFoundation
 class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     @IBOutlet var messageLabel:UILabel!
-    @IBOutlet var topbar: UIView!
+    @IBOutlet weak var exit: UIButton!
     
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
@@ -64,7 +64,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
             
             // Move the message label and top bar to the front
             view.bringSubview(toFront: messageLabel)
-            view.bringSubview(toFront: topbar)
+            view.bringSubview(toFront: exit)
             
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
